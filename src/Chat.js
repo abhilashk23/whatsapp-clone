@@ -123,21 +123,21 @@ function Chat() {
 
   // for deletion in future
 
-  // let collectionRef = fs.collection("rooms");
-  // collectionRef.where("name", "==", name)
-  // .get()
-  // .then(querySnapshot => {
-  // querySnapshot.forEach((doc) => {
-  //     doc.ref.delete().then(() => {
-  //     console.log("Document successfully deleted!");
-  //     }).catch(function(error) {
-  //     console.error("Error removing document: ", error);
-  //     });
-  // });
-  // })
-  // .catch(function(error) {
-  // console.log("Error getting documents: ", error);
-  // });
+  let collectionRef = fs.collection("rooms");
+  collectionRef.where("name", "==", name)
+  .get()
+  .then(querySnapshot => {
+  querySnapshot.forEach((doc) => {
+      doc.ref.delete().then(() => {
+      console.log("Document successfully deleted!");
+      }).catch(function(error) {
+      console.error("Error removing document: ", error);
+      });
+  });
+  })
+  .catch(function(error) {
+  console.log("Error getting documents: ", error);
+  });
 
   let blankObj = {};
   let TotalObj = [];
